@@ -14,7 +14,7 @@ bookmarkBtn.addEventListener("click",modalViewer);
 crossBtn.addEventListener("click",modalHide);
 form.addEventListener("submit",storeBookmark);
 bookmarkInner.addEventListener("click",function(e){
-    if( e.target){
+    if( e.target && !e.target.hasAttribute("href")){
       deleteBookmark(e);
     }
 })
