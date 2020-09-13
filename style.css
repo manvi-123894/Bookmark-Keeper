@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+
+:root{
+    --title-color : #262a61;
+    --background : rgba(0,0,0,0.3);
+    --background-color: rgb(172, 141, 175);
+    --link-color : #fff;
+    --cross-color : #dc2f2f;
+    --button-background : rgba(38, 42, 97,0.9);
+    --button-color : #fcbf1e;
+    --text-shadow : 1px 1px 0 var(--link-color);
+    --box-shadow: 1px 1px 5px 0 black;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23faf7ff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.bookmark-container{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.modal-container{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+.modal-container .modal{
+    width: 50%;
+    height: 275px;
+    background-color: var(--link-color);
+    background-color: rgba(237, 221, 238, 1);
+    box-shadow: 1px 1px 5px 0px rgb(117, 117, 117);
+    border-radius: 5px;
+}
+
+.modal-container .modal .modal-title{
+    width: 100%;
+    height: 25%;
+    background-color: var(--title-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: var(--link-color);
+    font-size: 1.2em;
+    font-family: sans-serif;
+    border-radius: 5px 5px 0 0;
+}
+
+
+
+.modal-container .modal .modal-form{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.modal-container .modal .modal-form #form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.modal-container .modal .modal-form #form label{
+    font-size: 1.2em;
+    color: var(--title-color);
+    font-family: sans-serif;
+}
+
+.modal-container .modal .modal-form #form  input{
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--title-color);
+    border-radius: 5px;
+    padding: 0 5px;
+    outline: none;
+}
+
+.form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-group .add{
+    padding: 3px 25px;
+    background-color: var(--title-color);
+    color: var(--link-color);
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+
+.form-group .add:hover{
+    background-color: var(--button-background);
+}
+
+.title{
+    font-size: 1.5em;
+    width: 100%;
+    min-height: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 0.05em;
+    text-shadow: var(--text-shadow);
+    color: var(--title-color);
+    padding: 5px;
+}
+
+.bookmark-creator-button{
+    width: 100%;
+    min-height: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.bookmark-creator-button button{
+    background-color: var(--button-color);
+    border: none;
+    font-size: 1.5em;
+    padding: 5px;
+    color: var(--title-color);
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 1px 1px 5px 0 black;
+    word-spacing: 0.5em;
+}
+
+.bookmark-creator-button button:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 2px 0 black;
+}
+
+
+.bookmark-inner{
+    padding: 10px;
+    width: 100%;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.single-bookmark{
+    background-color: var(--background);
+    min-width: 125px;
+    max-width: fit-content;
+    min-height: 60px;
+    max-height: fit-content;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.single-bookmark .cross{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--cross-color);
+    cursor: pointer;
+}
+
+.single-bookmark .item{
+    height: 75%;
+}
+
+
+a{
+    font-size: 1.2em;
+    color: var(--link-color);
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width:767px){
+
+    .modal-container .modal{
+        width: 75%;
+    }
+}
+
+
+@media screen and (max-width:576px){
+    .title{
+        font-size: 1.2em;
+    }
+
+    .modal-container .modal{
+        width: 95%;
+    }
+}
+
+
+@media screen and (max-width:267px){
+    .title{
+        font-size: 1em;
+    }
+
+    .modal-container .modal .modal-title{
+        font-size: 0.9em;
+    }
+
+    .modal-container .modal .modal-form #form label{
+        font-size: 0.9em;
+    }
+
+    .form-group .add{
+        font-size: 0.9em;
+    }
+}
